@@ -46,8 +46,8 @@ export default function Home() {
         <Form handleSubmit={handleSubmit} numbersOfParagraphs={numbersOfParagraphs} setNumbersOfParagraphs={setNumbersOfParagraphs}/>
         {text.length > 0 ? <div className={styles.txt__background}>
             {text.map(
-              (p) => (
-                <Text txt={p} />
+              (p, index) => (
+                <Text txt={p} key={index}/>
               )
             )}
         </div > : null}
