@@ -44,13 +44,13 @@ export default function Home() {
       <main className={styles.main}>
         <Header />
         <Form handleSubmit={handleSubmit} numbersOfParagraphs={numbersOfParagraphs} setNumbersOfParagraphs={setNumbersOfParagraphs}/>
-        <div className={styles.txt__background}>
+        {text.length > 0 ? <div className={styles.txt__background}>
             {text.map(
               (p) => (
                 <Text txt={p} />
               )
             )}
-        </div >
+        </div > : null}
         
       </main>
     </>
