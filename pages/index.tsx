@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import Text from '@/components/Text'
 import { count } from 'console'
 import data from '@/public/data/data'
+import { BiCopy } from 'react-icons/bi'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -59,7 +60,7 @@ export default function Home() {
       <main className={styles.main}>
         <Header />
         <Form handleSubmit={handleSubmit} numbersOfParagraphs={numbersOfParagraphs} setNumbersOfParagraphs={setNumbersOfParagraphs}/>
-        <button className={styles.card} onClick={handleClick}>{buttonText}</button>
+        <button className={styles.card} onClick={handleClick}><BiCopy /> {buttonText}</button>
         {text.length > 0 ? <div className={styles.txt__background}>
             {text.map(
               (p, index) => (
