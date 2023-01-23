@@ -13,6 +13,17 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
+  const data:string[] = [
+    'Not to be confused with the film Beetlejuice. Lester Green (born June 2, 1968), better known as Beetlejuice, is an American entertainer and actor. Green rose to prominence in 1999 due to his appearances on The Howard Stern Show, becoming a member of Stern\'s Wack Pack. He was named the greatest Wack Packer of all time in 2015. He has also appeared in such feature films as Bubble Boy (2001) and Scary Movie 2 (2001).'
+    ,'Green was born with dwarfism and microcephaly, a condition that caused his small head relative to his small body and an intellectual disability. He is the second youngest of six children by his mother Lillie and was raised in the Marion Section of Jersey City, New Jersey. Green was discovered in a neighborhood bar by Sean Rooney who became his manager. He would go on to become an entertainer and joined Rooney\'s dwarf tossing company where he was given his nickname because of his resemblance to a character in the movie Beetlejuice (1988). Sean Rooney died in 2009 and management of Green\'s career would fall to his brother, Bobby Rooney.'
+    ,'On the October 2, 2007, broadcast of The Howard Stern Show, Jerry O\'Connell revealed that he knew Green while he was growing up. O\'Connell\'s mother was Green\'s special education teacher at PS 31 in Jersey City, New Jersey, and Green was such a good student that he did special work as her "assistant".'
+    ,'Green made his debut on The Howard Stern Show on July 14, 1999, making an appearance with Frank "Third Degree" Burns, another little person, while Rooney was promoting his dwarf tossing business. Stern immediately took a liking to Beetlejuice and saw his potential for stardom, calling him a "once in a lifetime guest". Green would go on to make numerous appearances on the show and became one of Stern\'s most popular guests. Despite his popularity, some have been more critical of his appearances on the show due to the belief that Stern exploits developmentally disabled individuals.'
+    ,'In 2000, Stern was invited to the 17th AVN Awards to receive an honorary exclusive achievement award which he sent Green to receive for him. Green gave the acceptance speech with some direction from his manager that had to be stopped due to his lengthy, "incomprehensible rambling". That same year he made an appearance on WCW Nitro where, dressed as Superman, he confronted Jeff Jarrett backstage, who then proceeded to hit Green over the head with a guitar after calling Jarrett a "Slap Nut”. Green then interrupted Jarrett\'s WCW Championship match before being pummeled by the wrestler in the ring. During the 2000 United States Senate election in New York, Green appeared in a "Beetlejuice for Senate" parody campaign ad created for The Howard Stern Show. In the ad, Green announced his stances on various subjects such as abortion, taxes, education and drugs.'
+    ,'Green portrayed a fictional character in the 2001 cult comedy film Bubble Boy named Lil\' Zip, a member of a freak show that Jake Gyllenhaal\'s character Jimmy Livingston meets. Another member of Stern\'s Wack Pack, Matthew McGrory, also appeared alongside Green. That same year he would make a cameo appearance as himself in Scary Movie 2, depicted as the brain of Marlon Wayans\' stoner character Shorty Meeks.'
+    ,'In February 2021, Green made his first appearance on The Howard Stern Show in over five years. He informed Stern that he relocated to Georgia with his mother, and also debuted a remixed version of his 2015 song "Beetle in the House", featuring Snoop Dogg, Sean Paul, and Big Freedia.'
+    ,'In February 2022, Green\'s manager launched an NFT on the Goldin\'s Auction platform, which allowed the winning bidder to receive a physical rookie card signed by Green as well as a video of Green telling his life story. It sold for $15,000 after 21 bids.'
+  ];
+
   const [numbersOfParagraphs, setNumbersOfParagraphs] = useState<string>('');
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -33,7 +44,12 @@ export default function Home() {
       <main className={styles.main}>
         <Header />
         <Form handleSubmit={handleSubmit} numbersOfParagraphs={numbersOfParagraphs} setNumbersOfParagraphs={setNumbersOfParagraphs}/>
-        <Text txt='paragraph'/>
+        {/* <Text txt={data[0]}/> */}
+        {data.map(
+          (p) => (
+            <Text txt={p} />
+          )
+        )}
       </main>
     </>
   )
