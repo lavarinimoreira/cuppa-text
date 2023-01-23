@@ -15,8 +15,21 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
+  const initialButtonText:string = 'Copy'
   const [numbersOfParagraphs, setNumbersOfParagraphs] = useState<string>('');
   const [text, setText] = useState<string[]>([]);
+  const [buttonText, setButtonText] = useState<string>(initialButtonText);
+
+  const handleClick = () => {
+      setButtonText('Copied!')
+      let txt = text.toString();
+      let newTxt = txt.replace(/\.\,/g, ".");
+      navigator.clipboard.writeText(newTxt);
+
+      setTimeout(() => {
+        setButtonText(initialButtonText);
+      }, 1000);
+  }
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -33,6 +46,8 @@ export default function Home() {
     setText(data.slice(0, amount));
   }
 
+
+
   return (
     <>
       <Head>
@@ -44,6 +59,7 @@ export default function Home() {
       <main className={styles.main}>
         <Header />
         <Form handleSubmit={handleSubmit} numbersOfParagraphs={numbersOfParagraphs} setNumbersOfParagraphs={setNumbersOfParagraphs}/>
+        <button className={styles.card} onClick={handleClick}>{buttonText}</button>
         {text.length > 0 ? <div className={styles.txt__background}>
             {text.map(
               (p, index) => (
