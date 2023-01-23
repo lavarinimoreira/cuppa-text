@@ -6,22 +6,23 @@ interface Props{
     handleSubmit:(event:React.FormEvent) => void;
 }
 
-const Form: React.FC<Props> = ( { handleSubmit, numbersOfParagraphs, setNumbersOfParagraphs} ) => {
+const Form: React.FC<Props> = ( { handleSubmit, numbersOfParagraphs, setNumbersOfParagraphs } ) => {
     return (
         <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
             <div>
-                <label className={styles.label}>Paragraphs:</label>
+                <label htmlFor='amount' className={styles.label}>Paragraphs:</label>
                 <input
+                    name='amount'
                     value={numbersOfParagraphs}
                     className={styles.input}
-                    type="text"
+                    type='number'
                     onChange={
                         (e) => setNumbersOfParagraphs(e.target.value)
                     }
                 />
             </div>
 
-            <button className={styles.button}>GO</button>
+            <button className={styles.button}>Submit</button>
         </form>
     )
 }

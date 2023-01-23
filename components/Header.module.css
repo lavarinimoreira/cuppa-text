@@ -3,8 +3,21 @@
 .h1{
     font-family: 'Orbitron', cursive;
     font-size: 40px;
+    color: white;
 }
 
 .image{
     border-radius: 24px;
+    margin-top: 8px;
+    border: solid white 3px;
+}
+
+@media (max-width: 700px) {
+    .h1{
+        font-size: 32px;
+    }
+
+    .image{
+        border: solid white 2px;
+    }
 }

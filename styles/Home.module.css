@@ -1,3 +1,10 @@
+.txt__background {
+  background-color: black;
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 50%;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -175,6 +182,13 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+
+  .txt__background {
+    background-color: black;
+    border-radius: 8px;
+    max-width: 100%;
+  }
+
   .content {
     padding: 4rem;
   }

@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from '@/components/Text.module.css'
 
 interface Props{
     txt: string;
@@ -6,7 +7,7 @@ interface Props{
 
 const Text: React.FC<Props> = ( { txt } ) => {
   return (
-    <p>{txt}</p>
+    <p className={styles.p}>{txt}</p>
   )
 }
 
